@@ -19,7 +19,7 @@ if(localStorage.getItem('store')) {
 
 const frozen = new Freezer( { json: json });
 
-const guessType = function( value ){
+const guessType = ( value ) => {
 	let type = typeof value;
 	if( type !== 'object' )
 		return type;
@@ -38,21 +38,17 @@ export const typeDefaultValues = {
   boolean: ''
 }
 
-export const createAttribute = function( value, original, parent, key ){
+export const createAttribute = (value, original, parent, key) => {
 	let type = guessType( value ),
-	className = StringAttribute;
+	ClassName = StringAttribute;
 	if( type === 'object' )
-		className = ObjectAttribute;
+		ClassName = ObjectAttribute;
 	else if( type === 'array' )
-		className = ArrayAttribute;
+		ClassName = ArrayAttribute;
 	if( typeof original === 'undefined' )
 		original = typeDefaultValues[ type ];
-	return React.createElement(className, {
-		value: value,
-		attrkey: typeof key !== 'undefined' ? key : '',
-		parent: parent,
-		original: original
-	});
+  return <ClassName value={value}  attrkey={typeof key !== 'undefined' ? key : ''} parent={parent} original={original} />
+
 };
 
 class App extends Component {
