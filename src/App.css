@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.docEditor > .objectAttr {
+
+  float: left;
+}
+.modified {
+  font-weight: bold;
+}
+.attrChildren {
+  margin-left: 20px;
+  display: none;
+  font-weight: normal;
+  border-left: 1px dotted #ddd;
+}
+.compoundAttr.open > .attrChildren {
+  display: block;
+}
+.hashToggle:before {
+  content: '▸';
+  color: #333;
+  line-height: 1em;
+  margin-right: 3px;
+}
+.open > .hashToggle:before {
+  content: '▾';
+}
+
+.attrName {
+  font-style: italic;
+}
+
+.attrValue {
+  margin-left: 5px;
+}
+
+.attrRemove {
+  visibility: hidden;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.hashAttribute:hover > .attrRemove {
+  visibility: visible;
+}
+pre {
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 5px;
+  float: left;
+  width: 580px;
+  margin: 0 10px 0 0;
+  text-align: left;
+}
+
+.hashToggle, .stringAttr{
+  cursor: pointer;
+}
